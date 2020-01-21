@@ -262,6 +262,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="granateMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="rojo">
       <Properties>
@@ -275,6 +278,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rojoMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="verdeCaqui">
       <Properties>
@@ -288,6 +294,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="verdeCaquiMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="amarillo">
       <Properties>
@@ -301,6 +310,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="amarilloMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="verdeOscuro">
       <Properties>
@@ -314,6 +326,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="verdeOscuroMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="verdeClaro">
       <Properties>
@@ -327,6 +342,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="verdeClaroMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="mostaza">
       <Properties>
@@ -340,6 +358,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mostazaMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="azulClarito">
       <Properties>
@@ -353,6 +374,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="azulClaritoMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="azulOscuro">
       <Properties>
@@ -366,6 +390,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="azulOscuroMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="azul">
       <Properties>
@@ -379,6 +406,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="azulMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="morado">
       <Properties>
@@ -392,6 +422,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="moradoMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="rosa">
       <Properties>
@@ -405,6 +438,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rosaMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="verdeOscurito">
       <Properties>
@@ -418,6 +454,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="verdeOscuritoMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="amarilloClaro">
       <Properties>
@@ -431,6 +470,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="amarilloClaroMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="verdeSuperOscuro">
       <Properties>
@@ -444,6 +486,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="verdeSuperOscuroMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="verdeSuperClarito">
       <Properties>
@@ -457,6 +502,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="verdeSuperClaritoMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="azulSuperClarito">
       <Properties>
@@ -470,6 +518,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="azulSuperClaritoMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="verdeAgua">
       <Properties>
@@ -483,6 +534,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="verdeAguaMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="purpura">
       <Properties>
@@ -496,6 +550,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="purpuraMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="moradoOscuro">
       <Properties>
@@ -509,6 +566,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="moradoOscuroMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="azulAgua">
       <Properties>
@@ -522,6 +582,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="azulAguaMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="rosita">
       <Properties>
@@ -535,6 +598,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rositaMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="marron">
       <Properties>
@@ -548,6 +614,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="marronMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="naranja">
       <Properties>
@@ -561,6 +630,9 @@
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="naranjaMousePressed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

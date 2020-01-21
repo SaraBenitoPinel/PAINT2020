@@ -100,98 +100,218 @@ public class PanelDeColores extends javax.swing.JPanel {
         granate.setBackground(new java.awt.Color(153, 0, 0));
         granate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         granate.setOpaque(true);
+        granate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                granateMousePressed(evt);
+            }
+        });
 
         rojo.setBackground(new java.awt.Color(255, 0, 51));
         rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         rojo.setOpaque(true);
+        rojo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                rojoMousePressed(evt);
+            }
+        });
 
         verdeCaqui.setBackground(new java.awt.Color(153, 153, 0));
         verdeCaqui.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         verdeCaqui.setOpaque(true);
+        verdeCaqui.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                verdeCaquiMousePressed(evt);
+            }
+        });
 
         amarillo.setBackground(new java.awt.Color(255, 255, 0));
         amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         amarillo.setOpaque(true);
+        amarillo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                amarilloMousePressed(evt);
+            }
+        });
 
         verdeOscuro.setBackground(new java.awt.Color(0, 153, 0));
         verdeOscuro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         verdeOscuro.setOpaque(true);
+        verdeOscuro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                verdeOscuroMousePressed(evt);
+            }
+        });
 
         verdeClaro.setBackground(new java.awt.Color(51, 255, 0));
         verdeClaro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         verdeClaro.setOpaque(true);
+        verdeClaro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                verdeClaroMousePressed(evt);
+            }
+        });
 
         mostaza.setBackground(new java.awt.Color(204, 204, 0));
         mostaza.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         mostaza.setOpaque(true);
+        mostaza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                mostazaMousePressed(evt);
+            }
+        });
 
         azulClarito.setBackground(new java.awt.Color(51, 255, 255));
         azulClarito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         azulClarito.setOpaque(true);
+        azulClarito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                azulClaritoMousePressed(evt);
+            }
+        });
 
         azulOscuro.setBackground(new java.awt.Color(0, 51, 153));
         azulOscuro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         azulOscuro.setOpaque(true);
+        azulOscuro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                azulOscuroMousePressed(evt);
+            }
+        });
 
         azul.setBackground(new java.awt.Color(0, 51, 255));
         azul.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         azul.setOpaque(true);
+        azul.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                azulMousePressed(evt);
+            }
+        });
 
         morado.setBackground(new java.awt.Color(153, 0, 153));
         morado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         morado.setOpaque(true);
+        morado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                moradoMousePressed(evt);
+            }
+        });
 
         rosa.setBackground(new java.awt.Color(255, 51, 255));
         rosa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         rosa.setOpaque(true);
+        rosa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                rosaMousePressed(evt);
+            }
+        });
 
         verdeOscurito.setBackground(new java.awt.Color(102, 102, 0));
         verdeOscurito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         verdeOscurito.setOpaque(true);
+        verdeOscurito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                verdeOscuritoMousePressed(evt);
+            }
+        });
 
         amarilloClaro.setBackground(new java.awt.Color(255, 255, 102));
         amarilloClaro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         amarilloClaro.setOpaque(true);
+        amarilloClaro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                amarilloClaroMousePressed(evt);
+            }
+        });
 
         verdeSuperOscuro.setBackground(new java.awt.Color(0, 102, 51));
         verdeSuperOscuro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         verdeSuperOscuro.setOpaque(true);
+        verdeSuperOscuro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                verdeSuperOscuroMousePressed(evt);
+            }
+        });
 
         verdeSuperClarito.setBackground(new java.awt.Color(102, 255, 102));
         verdeSuperClarito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         verdeSuperClarito.setOpaque(true);
+        verdeSuperClarito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                verdeSuperClaritoMousePressed(evt);
+            }
+        });
 
         azulSuperClarito.setBackground(new java.awt.Color(0, 204, 204));
         azulSuperClarito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         azulSuperClarito.setOpaque(true);
+        azulSuperClarito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                azulSuperClaritoMousePressed(evt);
+            }
+        });
 
         verdeAgua.setBackground(new java.awt.Color(0, 153, 153));
         verdeAgua.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         verdeAgua.setOpaque(true);
+        verdeAgua.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                verdeAguaMousePressed(evt);
+            }
+        });
 
         purpura.setBackground(new java.awt.Color(204, 153, 255));
         purpura.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         purpura.setOpaque(true);
+        purpura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                purpuraMousePressed(evt);
+            }
+        });
 
         moradoOscuro.setBackground(new java.awt.Color(153, 51, 255));
         moradoOscuro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         moradoOscuro.setOpaque(true);
+        moradoOscuro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                moradoOscuroMousePressed(evt);
+            }
+        });
 
         azulAgua.setBackground(new java.awt.Color(0, 153, 255));
         azulAgua.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         azulAgua.setOpaque(true);
+        azulAgua.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                azulAguaMousePressed(evt);
+            }
+        });
 
         rosita.setBackground(new java.awt.Color(255, 153, 255));
         rosita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         rosita.setOpaque(true);
+        rosita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                rositaMousePressed(evt);
+            }
+        });
 
         marron.setBackground(new java.awt.Color(153, 0, 0));
         marron.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         marron.setOpaque(true);
+        marron.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                marronMousePressed(evt);
+            }
+        });
 
         naranja.setBackground(new java.awt.Color(255, 102, 0));
         naranja.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         naranja.setOpaque(true);
+        naranja.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                naranjaMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -338,8 +458,129 @@ public class PanelDeColores extends javax.swing.JPanel {
     }//GEN-LAST:event_grisMousePressed
 
     private void grisClaroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_grisClaroMousePressed
-        // TODO add your handling code here:
+      JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
     }//GEN-LAST:event_grisClaroMousePressed
+
+    private void granateMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_granateMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_granateMousePressed
+
+    private void rojoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rojoMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_rojoMousePressed
+
+    private void verdeCaquiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verdeCaquiMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_verdeCaquiMousePressed
+
+    private void amarilloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_amarilloMousePressed
+        JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_amarilloMousePressed
+
+    private void verdeOscuroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verdeOscuroMousePressed
+        JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_verdeOscuroMousePressed
+
+    private void verdeClaroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verdeClaroMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_verdeClaroMousePressed
+
+    private void mostazaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mostazaMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_mostazaMousePressed
+
+    private void azulClaritoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_azulClaritoMousePressed
+        JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_azulClaritoMousePressed
+
+    private void azulOscuroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_azulOscuroMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_azulOscuroMousePressed
+
+    private void azulMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_azulMousePressed
+        JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_azulMousePressed
+
+    private void moradoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moradoMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_moradoMousePressed
+
+    private void rosaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rosaMousePressed
+      JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_rosaMousePressed
+
+    private void verdeOscuritoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verdeOscuritoMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_verdeOscuritoMousePressed
+
+    private void amarilloClaroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_amarilloClaroMousePressed
+      JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_amarilloClaroMousePressed
+
+    private void verdeSuperOscuroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verdeSuperOscuroMousePressed
+      JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_verdeSuperOscuroMousePressed
+
+    private void verdeSuperClaritoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verdeSuperClaritoMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_verdeSuperClaritoMousePressed
+
+    private void azulSuperClaritoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_azulSuperClaritoMousePressed
+        JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_azulSuperClaritoMousePressed
+
+    private void verdeAguaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verdeAguaMousePressed
+        JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_verdeAguaMousePressed
+
+    private void purpuraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purpuraMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_purpuraMousePressed
+
+    private void moradoOscuroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moradoOscuroMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_moradoOscuroMousePressed
+
+    private void azulAguaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_azulAguaMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_azulAguaMousePressed
+
+    private void rositaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rositaMousePressed
+       JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_rositaMousePressed
+
+    private void marronMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_marronMousePressed
+        JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_marronMousePressed
+
+    private void naranjaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_naranjaMousePressed
+        JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_naranjaMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
