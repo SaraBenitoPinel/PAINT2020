@@ -6,6 +6,7 @@
 package codigo;
 
 import java.awt.Color;
+import javax.swing.JLabel;
 
 /**
  *
@@ -35,30 +36,33 @@ public class PanelDeColores extends javax.swing.JPanel {
         grisClaro = new javax.swing.JLabel();
         granate = new javax.swing.JLabel();
         rojo = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        verdeCaqui = new javax.swing.JLabel();
+        amarillo = new javax.swing.JLabel();
+        verdeOscuro = new javax.swing.JLabel();
+        verdeClaro = new javax.swing.JLabel();
+        mostaza = new javax.swing.JLabel();
+        azulClarito = new javax.swing.JLabel();
+        azulOscuro = new javax.swing.JLabel();
+        azul = new javax.swing.JLabel();
+        morado = new javax.swing.JLabel();
+        rosa = new javax.swing.JLabel();
+        verdeOscurito = new javax.swing.JLabel();
+        amarilloClaro = new javax.swing.JLabel();
+        verdeSuperOscuro = new javax.swing.JLabel();
+        verdeSuperClarito = new javax.swing.JLabel();
+        azulSuperClarito = new javax.swing.JLabel();
+        verdeAgua = new javax.swing.JLabel();
+        purpura = new javax.swing.JLabel();
+        moradoOscuro = new javax.swing.JLabel();
+        azulAgua = new javax.swing.JLabel();
+        rosita = new javax.swing.JLabel();
+        marron = new javax.swing.JLabel();
+        naranja = new javax.swing.JLabel();
+
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         negro.setBackground(new java.awt.Color(0, 0, 0));
+        negro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         negro.setOpaque(true);
         negro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -67,85 +71,127 @@ public class PanelDeColores extends javax.swing.JPanel {
         });
 
         blanco.setBackground(new java.awt.Color(255, 255, 255));
+        blanco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         blanco.setOpaque(true);
+        blanco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                blancoMousePressed(evt);
+            }
+        });
 
         gris.setBackground(new java.awt.Color(153, 153, 153));
+        gris.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         gris.setOpaque(true);
+        gris.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                grisMousePressed(evt);
+            }
+        });
 
         grisClaro.setBackground(new java.awt.Color(204, 204, 204));
+        grisClaro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         grisClaro.setOpaque(true);
+        grisClaro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                grisClaroMousePressed(evt);
+            }
+        });
 
         granate.setBackground(new java.awt.Color(153, 0, 0));
+        granate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         granate.setOpaque(true);
 
         rojo.setBackground(new java.awt.Color(255, 0, 51));
+        rojo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         rojo.setOpaque(true);
 
-        jLabel7.setBackground(new java.awt.Color(153, 153, 0));
-        jLabel7.setOpaque(true);
+        verdeCaqui.setBackground(new java.awt.Color(153, 153, 0));
+        verdeCaqui.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        verdeCaqui.setOpaque(true);
 
-        jLabel8.setBackground(new java.awt.Color(255, 255, 0));
-        jLabel8.setOpaque(true);
+        amarillo.setBackground(new java.awt.Color(255, 255, 0));
+        amarillo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        amarillo.setOpaque(true);
 
-        jLabel9.setBackground(new java.awt.Color(0, 153, 0));
-        jLabel9.setOpaque(true);
+        verdeOscuro.setBackground(new java.awt.Color(0, 153, 0));
+        verdeOscuro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        verdeOscuro.setOpaque(true);
 
-        jLabel10.setBackground(new java.awt.Color(51, 255, 0));
-        jLabel10.setOpaque(true);
+        verdeClaro.setBackground(new java.awt.Color(51, 255, 0));
+        verdeClaro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        verdeClaro.setOpaque(true);
 
-        jLabel11.setBackground(new java.awt.Color(204, 204, 0));
-        jLabel11.setOpaque(true);
+        mostaza.setBackground(new java.awt.Color(204, 204, 0));
+        mostaza.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        mostaza.setOpaque(true);
 
-        jLabel12.setBackground(new java.awt.Color(51, 255, 255));
-        jLabel12.setOpaque(true);
+        azulClarito.setBackground(new java.awt.Color(51, 255, 255));
+        azulClarito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        azulClarito.setOpaque(true);
 
-        jLabel13.setBackground(new java.awt.Color(0, 51, 153));
-        jLabel13.setOpaque(true);
+        azulOscuro.setBackground(new java.awt.Color(0, 51, 153));
+        azulOscuro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        azulOscuro.setOpaque(true);
 
-        jLabel14.setBackground(new java.awt.Color(0, 51, 255));
-        jLabel14.setOpaque(true);
+        azul.setBackground(new java.awt.Color(0, 51, 255));
+        azul.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        azul.setOpaque(true);
 
-        jLabel15.setBackground(new java.awt.Color(153, 0, 153));
-        jLabel15.setOpaque(true);
+        morado.setBackground(new java.awt.Color(153, 0, 153));
+        morado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        morado.setOpaque(true);
 
-        jLabel16.setBackground(new java.awt.Color(255, 51, 255));
-        jLabel16.setOpaque(true);
+        rosa.setBackground(new java.awt.Color(255, 51, 255));
+        rosa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        rosa.setOpaque(true);
 
-        jLabel17.setBackground(new java.awt.Color(102, 102, 0));
-        jLabel17.setOpaque(true);
+        verdeOscurito.setBackground(new java.awt.Color(102, 102, 0));
+        verdeOscurito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        verdeOscurito.setOpaque(true);
 
-        jLabel18.setBackground(new java.awt.Color(255, 255, 102));
-        jLabel18.setOpaque(true);
+        amarilloClaro.setBackground(new java.awt.Color(255, 255, 102));
+        amarilloClaro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        amarilloClaro.setOpaque(true);
 
-        jLabel19.setBackground(new java.awt.Color(0, 102, 51));
-        jLabel19.setOpaque(true);
+        verdeSuperOscuro.setBackground(new java.awt.Color(0, 102, 51));
+        verdeSuperOscuro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        verdeSuperOscuro.setOpaque(true);
 
-        jLabel20.setBackground(new java.awt.Color(102, 255, 102));
-        jLabel20.setOpaque(true);
+        verdeSuperClarito.setBackground(new java.awt.Color(102, 255, 102));
+        verdeSuperClarito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        verdeSuperClarito.setOpaque(true);
 
-        jLabel21.setBackground(new java.awt.Color(0, 204, 204));
-        jLabel21.setOpaque(true);
+        azulSuperClarito.setBackground(new java.awt.Color(0, 204, 204));
+        azulSuperClarito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        azulSuperClarito.setOpaque(true);
 
-        jLabel22.setBackground(new java.awt.Color(0, 153, 153));
-        jLabel22.setOpaque(true);
+        verdeAgua.setBackground(new java.awt.Color(0, 153, 153));
+        verdeAgua.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        verdeAgua.setOpaque(true);
 
-        jLabel23.setBackground(new java.awt.Color(204, 153, 255));
-        jLabel23.setOpaque(true);
+        purpura.setBackground(new java.awt.Color(204, 153, 255));
+        purpura.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        purpura.setOpaque(true);
 
-        jLabel24.setBackground(new java.awt.Color(153, 51, 255));
-        jLabel24.setOpaque(true);
+        moradoOscuro.setBackground(new java.awt.Color(153, 51, 255));
+        moradoOscuro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        moradoOscuro.setOpaque(true);
 
-        jLabel25.setBackground(new java.awt.Color(0, 153, 255));
-        jLabel25.setOpaque(true);
+        azulAgua.setBackground(new java.awt.Color(0, 153, 255));
+        azulAgua.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        azulAgua.setOpaque(true);
 
-        jLabel26.setBackground(new java.awt.Color(255, 153, 255));
-        jLabel26.setOpaque(true);
+        rosita.setBackground(new java.awt.Color(255, 153, 255));
+        rosita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        rosita.setOpaque(true);
 
-        jLabel27.setBackground(new java.awt.Color(153, 0, 0));
-        jLabel27.setOpaque(true);
+        marron.setBackground(new java.awt.Color(153, 0, 0));
+        marron.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        marron.setOpaque(true);
 
-        jLabel28.setBackground(new java.awt.Color(255, 102, 0));
-        jLabel28.setOpaque(true);
+        naranja.setBackground(new java.awt.Color(255, 102, 0));
+        naranja.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        naranja.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -166,49 +212,49 @@ public class PanelDeColores extends javax.swing.JPanel {
                     .addComponent(granate, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(amarillo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(verdeCaqui, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(verdeClaro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(verdeOscuro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(azulClarito, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mostaza, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(azul, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(azulOscuro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rosa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(morado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(amarilloClaro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(verdeOscurito, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(verdeSuperClarito, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(verdeSuperOscuro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(verdeAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(azulSuperClarito, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(moradoOscuro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(purpura, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rosita, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(azulAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addComponent(naranja, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(marron, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,52 +262,52 @@ public class PanelDeColores extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(marron, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(naranja, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(azulAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(rosita, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(purpura, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(moradoOscuro, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(azulSuperClarito, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(verdeAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(verdeSuperOscuro, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(verdeSuperClarito, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(verdeOscurito, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(amarilloClaro, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(morado, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rosa, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(azulOscuro, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(azul, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(mostaza, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(azulClarito, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(verdeOscuro, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(verdeClaro, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(verdeCaqui, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(amarillo, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(granate, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -279,38 +325,51 @@ public class PanelDeColores extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void negroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_negroMousePressed
-        colorSeleccionado = Color.red;
+        colorSeleccionado = Color.black;
     }//GEN-LAST:event_negroMousePressed
+
+    private void blancoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blancoMousePressed
+       colorSeleccionado = Color.white;
+    }//GEN-LAST:event_blancoMousePressed
+
+    private void grisMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_grisMousePressed
+      JLabel s = (JLabel) evt.getSource();
+      colorSeleccionado = s.getBackground();
+    }//GEN-LAST:event_grisMousePressed
+
+    private void grisClaroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_grisClaroMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_grisClaroMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel amarillo;
+    private javax.swing.JLabel amarilloClaro;
+    private javax.swing.JLabel azul;
+    private javax.swing.JLabel azulAgua;
+    private javax.swing.JLabel azulClarito;
+    private javax.swing.JLabel azulOscuro;
+    private javax.swing.JLabel azulSuperClarito;
     private javax.swing.JLabel blanco;
     private javax.swing.JLabel granate;
     private javax.swing.JLabel gris;
     private javax.swing.JLabel grisClaro;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel marron;
+    private javax.swing.JLabel morado;
+    private javax.swing.JLabel moradoOscuro;
+    private javax.swing.JLabel mostaza;
+    private javax.swing.JLabel naranja;
     private javax.swing.JLabel negro;
+    private javax.swing.JLabel purpura;
     private javax.swing.JLabel rojo;
+    private javax.swing.JLabel rosa;
+    private javax.swing.JLabel rosita;
+    private javax.swing.JLabel verdeAgua;
+    private javax.swing.JLabel verdeCaqui;
+    private javax.swing.JLabel verdeClaro;
+    private javax.swing.JLabel verdeOscurito;
+    private javax.swing.JLabel verdeOscuro;
+    private javax.swing.JLabel verdeSuperClarito;
+    private javax.swing.JLabel verdeSuperOscuro;
     // End of variables declaration//GEN-END:variables
 }
