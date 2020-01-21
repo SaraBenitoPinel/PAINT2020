@@ -53,6 +53,7 @@ public class VentanaPaint extends javax.swing.JFrame {
     private void initComponents() {
 
         VentanaPintar = new javax.swing.JPanel();
+        panelDeColores1 = new codigo.PanelDeColores();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,11 +68,11 @@ public class VentanaPaint extends javax.swing.JFrame {
         VentanaPintar.setLayout(VentanaPintarLayout);
         VentanaPintarLayout.setHorizontalGroup(
             VentanaPintarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGap(0, 447, Short.MAX_VALUE)
         );
         VentanaPintarLayout.setVerticalGroup(
             VentanaPintarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 378, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -80,22 +81,26 @@ public class VentanaPaint extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(106, Short.MAX_VALUE)
-                .addComponent(VentanaPintar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelDeColores1, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VentanaPintar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addComponent(VentanaPintar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addComponent(VentanaPintar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(panelDeColores1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void VentanaPintarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentanaPintarMouseDragged
-        bufferGraphics.setColor(Color.BLACK);
+        bufferGraphics.setColor(panelDeColores1.colorSeleccionado);
         bufferGraphics.fillOval(evt.getX(), evt.getY(), 4, 4);
         repaint (0,0,1,1);
     }//GEN-LAST:event_VentanaPintarMouseDragged
@@ -138,5 +143,6 @@ public class VentanaPaint extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel VentanaPintar;
+    private codigo.PanelDeColores panelDeColores1;
     // End of variables declaration//GEN-END:variables
 }
