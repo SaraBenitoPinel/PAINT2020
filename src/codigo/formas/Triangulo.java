@@ -7,15 +7,16 @@ package codigo.formas;
 
 import java.awt.Color;
 
+
 /**
  *
  * @author Sarita
  */
-public class Cuadrado extends Forma{
-    
-    public Cuadrado(int _posX, int _posY, int _lados, Color _color, boolean _relleno) {
-        super(_posX, _posY, 4, _color, _relleno);
+public class Triangulo extends Forma {
+
+    public Triangulo(int _posX, int _posY, int _lados, Color _color, boolean _relleno) {
+        super(_posX, _posY, 3, _color, _relleno);
     }
-    
-    
 }
+
+    

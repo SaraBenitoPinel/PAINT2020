@@ -10,7 +10,7 @@ package codigo;
  * @author Sarita
  */
 public class BarraHerramientas extends javax.swing.JPanel {
-
+ public int formaElegida;
     /**
      * Creates new form BarraHerramientas
      */
@@ -37,6 +37,7 @@ public class BarraHerramientas extends javax.swing.JPanel {
         cuadrado = new javax.swing.JLabel();
         goma = new javax.swing.JLabel();
         lapiz = new javax.swing.JLabel();
+        pentagono = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -72,10 +73,20 @@ public class BarraHerramientas extends javax.swing.JPanel {
         triangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/triangulo.jpg"))); // NOI18N
         triangulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         triangulo.setOpaque(true);
+        triangulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                trianguloMousePressed(evt);
+            }
+        });
 
         cuadrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cuadrado.jpg"))); // NOI18N
         cuadrado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cuadrado.setOpaque(true);
+        cuadrado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cuadradoMousePressed(evt);
+            }
+        });
 
         goma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/goma.jpg"))); // NOI18N
         goma.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -84,6 +95,15 @@ public class BarraHerramientas extends javax.swing.JPanel {
         lapiz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lapiz.jpg"))); // NOI18N
         lapiz.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lapiz.setOpaque(true);
+
+        pentagono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pentagono.jpg"))); // NOI18N
+        pentagono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pentagono.setOpaque(true);
+        pentagono.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pentagonoMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -101,8 +121,9 @@ public class BarraHerramientas extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(circulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(triangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -111,13 +132,16 @@ public class BarraHerramientas extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pipeta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lapiz, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lapiz, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pentagono, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lapiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(goma))
@@ -137,13 +161,27 @@ public class BarraHerramientas extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(triangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pentagono, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void circuloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_circuloMousePressed
-     
+     formaElegida = 1;
     }//GEN-LAST:event_circuloMousePressed
+
+    private void cuadradoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cuadradoMousePressed
+     formaElegida = 4;
+    }//GEN-LAST:event_cuadradoMousePressed
+
+    private void trianguloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trianguloMousePressed
+      formaElegida = 3;
+    }//GEN-LAST:event_trianguloMousePressed
+
+    private void pentagonoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pentagonoMousePressed
+      formaElegida = 5;
+    }//GEN-LAST:event_pentagonoMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -153,6 +191,7 @@ public class BarraHerramientas extends javax.swing.JPanel {
     private javax.swing.JLabel goma;
     private javax.swing.JLabel lapiz;
     private javax.swing.JLabel linea;
+    private javax.swing.JLabel pentagono;
     private javax.swing.JLabel pipeta;
     private javax.swing.JLabel spray;
     private javax.swing.JLabel texto;

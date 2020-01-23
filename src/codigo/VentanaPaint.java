@@ -6,6 +6,10 @@
 package codigo;
 
 import codigo.formas.Circulo;
+import codigo.formas.Cuadrado;
+import codigo.formas.Forma;
+import codigo.formas.Pentagono;
+import codigo.formas.Triangulo;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -19,8 +23,8 @@ public class VentanaPaint extends javax.swing.JFrame {
 
     BufferedImage buffer = null;
     Graphics2D bufferGraphics, jpanelGraphics = null;
-    int herramientaSeleccionada = 0;
     Circulo miCirculo = null;
+    Forma miForma = null;
 
     /**
      * Creates new form VentanaPaint
@@ -65,6 +69,7 @@ public class VentanaPaint extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
         edit = new javax.swing.JMenu();
+        edit1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +120,9 @@ public class VentanaPaint extends javax.swing.JFrame {
         edit.setText("Edit");
         jMenuBar1.add(edit);
 
+        edit1.setText("Help");
+        jMenuBar1.add(edit1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -152,24 +160,52 @@ public class VentanaPaint extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VentanaPintarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentanaPintarMouseDragged
-        switch (herramientaSeleccionada) {
+        switch (barraHerramientas2.formaElegida) {
             case 0:
                 bufferGraphics.setColor(panelDeColores1.colorSeleccionado);
                 bufferGraphics.fillOval(evt.getX(), evt.getY(), 4, 4);
-                 break;
-                case 1: miCirculo.dibujate(bufferGraphics, evt.getX());
-            }
+                break;
+            case 1:
+                miCirculo.dibujate(bufferGraphics, evt.getX());
+                break;
+            case 5:
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                break;
+            case 4:
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                break;
+            case 3:
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                break;
+        }
         repaint(0, 0, 1, 1);
     }//GEN-LAST:event_VentanaPintarMouseDragged
 
     private void VentanaPintarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentanaPintarMousePressed
-        switch (herramientaSeleccionada) {
-            case 0:break;
-                case 1: miCirculo = new Circulo (evt.getX(), evt.getY(), 1, 
+        switch (barraHerramientas2.formaElegida) {
+            case 0:
+                break;
+            case 1:
+                miCirculo = new Circulo(evt.getX(), evt.getY(), 1,
                         panelDeColores1.colorSeleccionado, true);
                 miCirculo.dibujate(bufferGraphics, evt.getX());
                 break;
-            
+            case 5:
+                miForma = new Pentagono(evt.getX(), evt.getY(), 5,
+                        panelDeColores1.colorSeleccionado, true);
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                break;
+            case 4:
+                miForma = new Cuadrado(evt.getX(), evt.getY(), 4,
+                        panelDeColores1.colorSeleccionado, true);
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                break;
+            case 3:
+                miForma = new Triangulo(evt.getX(), evt.getY(), 3,
+                        panelDeColores1.colorSeleccionado, true);
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                break;
+
         }
     }//GEN-LAST:event_VentanaPintarMousePressed
 
@@ -213,6 +249,7 @@ public class VentanaPaint extends javax.swing.JFrame {
     private javax.swing.JPanel VentanaPintar;
     private codigo.BarraHerramientas barraHerramientas2;
     private javax.swing.JMenu edit;
+    private javax.swing.JMenu edit1;
     private javax.swing.JMenu file;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;

@@ -314,6 +314,7 @@ public class PanelDeColores extends javax.swing.JPanel {
             }
         });
 
+        SaberColor.setBackground(new java.awt.Color(0, 0, 0));
         SaberColor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         SaberColor.setOpaque(true);
 
