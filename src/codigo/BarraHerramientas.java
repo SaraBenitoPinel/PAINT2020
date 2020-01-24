@@ -10,10 +10,12 @@ package codigo;
  * @author Sarita
  */
 public class BarraHerramientas extends javax.swing.JPanel {
-  //Indica cual de las formas se va a dibujar
- public int formaElegida;
- //Indica si la figura se tiene que pintar rellena o no
- public boolean relleno = false;
+    //Indica cual de las formas se va a dibujar
+
+    public int formaElegida;
+    //Indica si la figura se tiene que pintar rellena o no
+    public boolean relleno = false;
+
     /**
      * Creates new form BarraHerramientas
      */
@@ -60,6 +62,11 @@ public class BarraHerramientas extends javax.swing.JPanel {
         linea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/linea.jpg"))); // NOI18N
         linea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         linea.setOpaque(true);
+        linea.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lineaMousePressed(evt);
+            }
+        });
 
         spray.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/spray.jpg"))); // NOI18N
         spray.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -210,40 +217,44 @@ public class BarraHerramientas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void circuloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_circuloMousePressed
-     formaElegida = 1;
+        formaElegida = 1;
     }//GEN-LAST:event_circuloMousePressed
 
     private void cuadradoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cuadradoMousePressed
-     formaElegida = 4;
+        formaElegida = 4;
     }//GEN-LAST:event_cuadradoMousePressed
 
     private void trianguloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trianguloMousePressed
-      formaElegida = 3;
+        formaElegida = 3;
     }//GEN-LAST:event_trianguloMousePressed
 
     private void pentagonoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pentagonoMousePressed
-      formaElegida = 5;
+        formaElegida = 5;
     }//GEN-LAST:event_pentagonoMousePressed
 
     private void estrellaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estrellaMousePressed
-      formaElegida = 2;
+        formaElegida = 2;
     }//GEN-LAST:event_estrellaMousePressed
 
     private void RellenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RellenoActionPerformed
-      relleno= Relleno.isSelected();
+        relleno = Relleno.isSelected();
     }//GEN-LAST:event_RellenoActionPerformed
 
     private void lapizMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lapizMousePressed
-      formaElegida = 0;
+        formaElegida = 0;
     }//GEN-LAST:event_lapizMousePressed
 
     private void gomaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gomaMousePressed
-      formaElegida = 10;
+        formaElegida = 10;
     }//GEN-LAST:event_gomaMousePressed
 
     private void sprayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sprayMousePressed
-       formaElegida=6;
+        formaElegida = 6;
     }//GEN-LAST:event_sprayMousePressed
+
+    private void lineaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lineaMousePressed
+        formaElegida = 7;
+    }//GEN-LAST:event_lineaMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

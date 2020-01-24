@@ -9,6 +9,7 @@ import codigo.formas.Circulo;
 import codigo.formas.Cuadrado;
 import codigo.formas.Estrella;
 import codigo.formas.Forma;
+import codigo.formas.Linea;
 import codigo.formas.Pentagono;
 import codigo.formas.Triangulo;
 import java.awt.Color;
@@ -196,6 +197,9 @@ public class VentanaPaint extends javax.swing.JFrame {
                 for (int i=0; i<25; i++){
                 bufferGraphics2.fillOval(evt.getX()+ aleatorio.nextInt(20), evt.getY()+ aleatorio.nextInt(25), 2, 2);
                 } break;
+            case 7:
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                break;
 
         }
         repaint(0, 0, 1, 1);
@@ -234,8 +238,12 @@ public class VentanaPaint extends javax.swing.JFrame {
                 miForma = new Forma(-1, -1, 1, Color.white, false);
                 break;
             case 6:
-                
                 miForma = new Forma(-1, -1, 1, Color.white, false);
+                break;
+            case 7:
+                miForma = new Linea (evt.getX(), evt.getY(), 2,
+                        panelDeColores1.colorSeleccionado,barraHerramientas.relleno);
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
                 break;
         }
     }//GEN-LAST:event_VentanaPintarMousePressed
