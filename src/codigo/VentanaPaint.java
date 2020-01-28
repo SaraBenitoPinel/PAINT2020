@@ -302,6 +302,10 @@ public class VentanaPaint extends javax.swing.JFrame {
             case 7:
                 miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
                 break;
+            case 8:
+                bufferGraphics2.setColor(panelDeColores1.colorSeleccionado);
+                bufferGraphics2.fillRect(evt.getX(), evt.getY(), 10, 10);
+                break;
 
         }
         repaint(0, 0, 1, 1);
@@ -347,6 +351,8 @@ public class VentanaPaint extends javax.swing.JFrame {
                         panelDeColores1.colorSeleccionado, barraHerramientas.relleno);
                 miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
                 break;
+            case 8:
+                break;
         }
     }//GEN-LAST:event_VentanaPintarMousePressed
 
@@ -381,11 +387,12 @@ public class VentanaPaint extends javax.swing.JFrame {
             String extension = nombre.substring(nombre.lastIndexOf('.') + 1, nombre.length());
             if (extension.equalsIgnoreCase("jpg") || extension.equalsIgnoreCase("png")) {
                 try {
-                    ImageIO.write(buffer, "png", fichero);
+                    bufferGraphics.drawImage(ImageIO.read(fichero), 0, 0, null);
+                    bufferGraphics2.drawImage(ImageIO.read(fichero), 0, 0, null);
+                    repaint(0, 0, 1, 1);
                 } catch (IOException e) {
                 }
-            }
-            else{
+            } else {
                 //mensaje de extension no válida
             }
         }

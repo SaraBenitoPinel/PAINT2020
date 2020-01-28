@@ -54,6 +54,11 @@ public class BarraHerramientas extends javax.swing.JPanel {
         brocha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/brocha.jpg"))); // NOI18N
         brocha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         brocha.setOpaque(true);
+        brocha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                brochaMousePressed(evt);
+            }
+        });
 
         pipeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pipeta.jpg"))); // NOI18N
         pipeta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -255,6 +260,10 @@ public class BarraHerramientas extends javax.swing.JPanel {
     private void lineaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lineaMousePressed
         formaElegida = 7;
     }//GEN-LAST:event_lineaMousePressed
+
+    private void brochaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_brochaMousePressed
+       formaElegida =8;
+    }//GEN-LAST:event_brochaMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
