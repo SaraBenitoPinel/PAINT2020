@@ -16,7 +16,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
+import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -29,12 +33,14 @@ public class VentanaPaint extends javax.swing.JFrame {
     Circulo miCirculo = null;
     Forma miForma = new Forma(-1, -1, 1, Color.white, false);
     Random aleatorio = new Random();
+
     /**
      * Creates new form VentanaPaint
      */
     public VentanaPaint() {
         initComponents();
         inicializaBuffers();
+        PaletaDeColores.setSize(750, 450);
     }
 
     private void inicializaBuffers() {
@@ -69,14 +75,84 @@ public class VentanaPaint extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PaletaDeColores = new javax.swing.JDialog();
+        Colores = new javax.swing.JColorChooser();
+        Cancelar = new javax.swing.JButton();
+        Ok = new javax.swing.JButton();
+        GuardarArchivos = new javax.swing.JDialog();
+        GuardarArchivito = new javax.swing.JFileChooser();
         VentanaPintar = new javax.swing.JPanel();
         panelDeColores1 = new codigo.PanelDeColores();
         jPanel1 = new javax.swing.JPanel();
         barraHerramientas = new codigo.BarraHerramientas();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        EligeColor = new javax.swing.JButton();
+        Menu = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
+        Guardar = new javax.swing.JMenuItem();
         edit = new javax.swing.JMenu();
         edit1 = new javax.swing.JMenu();
+
+        Cancelar.setBackground(new java.awt.Color(255, 255, 255));
+        Cancelar.setText("Cancelar");
+        Cancelar.setBorder(null);
+        Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarActionPerformed(evt);
+            }
+        });
+
+        Ok.setBackground(new java.awt.Color(255, 255, 255));
+        Ok.setText("Ok");
+        Ok.setBorder(null);
+        Ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OkActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PaletaDeColoresLayout = new javax.swing.GroupLayout(PaletaDeColores.getContentPane());
+        PaletaDeColores.getContentPane().setLayout(PaletaDeColoresLayout);
+        PaletaDeColoresLayout.setHorizontalGroup(
+            PaletaDeColoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaletaDeColoresLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Colores, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(PaletaDeColoresLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Ok, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(164, 164, 164))
+        );
+        PaletaDeColoresLayout.setVerticalGroup(
+            PaletaDeColoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PaletaDeColoresLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(Colores, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PaletaDeColoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                    .addComponent(Ok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout GuardarArchivosLayout = new javax.swing.GroupLayout(GuardarArchivos.getContentPane());
+        GuardarArchivos.getContentPane().setLayout(GuardarArchivosLayout);
+        GuardarArchivosLayout.setHorizontalGroup(
+            GuardarArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GuardarArchivosLayout.createSequentialGroup()
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addComponent(GuardarArchivito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
+        );
+        GuardarArchivosLayout.setVerticalGroup(
+            GuardarArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GuardarArchivosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(GuardarArchivito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,6 +183,14 @@ public class VentanaPaint extends javax.swing.JFrame {
             .addGap(0, 410, Short.MAX_VALUE)
         );
 
+        EligeColor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/paleta.jpg"))); // NOI18N
+        EligeColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EligeColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EligeColorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -115,40 +199,57 @@ public class VentanaPaint extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(barraHerramientas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(EligeColor, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(barraHerramientas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(EligeColor, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         file.setText("File");
-        jMenuBar1.add(file);
+        file.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fileActionPerformed(evt);
+            }
+        });
+
+        Guardar.setText("Guardar");
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarActionPerformed(evt);
+            }
+        });
+        file.add(Guardar);
+
+        Menu.add(file);
 
         edit.setText("Edit");
-        jMenuBar1.add(edit);
+        Menu.add(edit);
 
         edit1.setText("Help");
-        jMenuBar1.add(edit1);
+        Menu.add(edit1);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(VentanaPintar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(panelDeColores1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, Short.MAX_VALUE))
+                    .addComponent(panelDeColores1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VentanaPintar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,9 +259,9 @@ public class VentanaPaint extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(VentanaPintar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(panelDeColores1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(21, 21, 21)
+                .addComponent(panelDeColores1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -194,9 +295,10 @@ public class VentanaPaint extends javax.swing.JFrame {
                 break;
             case 6:
                 bufferGraphics2.setColor(panelDeColores1.colorSeleccionado);
-                for (int i=0; i<25; i++){
-                bufferGraphics2.fillOval(evt.getX()+ aleatorio.nextInt(20), evt.getY()+ aleatorio.nextInt(25), 2, 2);
-                } break;
+                for (int i = 0; i < 25; i++) {
+                    bufferGraphics2.fillOval(evt.getX() + aleatorio.nextInt(20), evt.getY() + aleatorio.nextInt(25), 2, 2);
+                }
+                break;
             case 7:
                 miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
                 break;
@@ -241,8 +343,8 @@ public class VentanaPaint extends javax.swing.JFrame {
                 miForma = new Forma(-1, -1, 1, Color.white, false);
                 break;
             case 7:
-                miForma = new Linea (evt.getX(), evt.getY(), 2,
-                        panelDeColores1.colorSeleccionado,barraHerramientas.relleno);
+                miForma = new Linea(evt.getX(), evt.getY(), 2,
+                        panelDeColores1.colorSeleccionado, barraHerramientas.relleno);
                 miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
                 break;
         }
@@ -255,6 +357,43 @@ public class VentanaPaint extends javax.swing.JFrame {
             miForma.dibujate(bufferGraphics2, evt.getX(), evt.getY());
         }
     }//GEN-LAST:event_VentanaPintarMouseReleased
+
+    private void EligeColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EligeColorActionPerformed
+        PaletaDeColores.setVisible(true);
+
+    }//GEN-LAST:event_EligeColorActionPerformed
+
+    private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
+        PaletaDeColores.setVisible(false);
+        panelDeColores1.colorSeleccionado = Colores.getColor();
+    }//GEN-LAST:event_OkActionPerformed
+
+    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
+        PaletaDeColores.setVisible(false);
+    }//GEN-LAST:event_CancelarActionPerformed
+
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
+        int seleccion = GuardarArchivito.showSaveDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            //Si entra aquí es porque el usuario ha pulsado en "guardar"
+            File fichero = GuardarArchivito.getSelectedFile();
+            String nombre = fichero.getName();
+            String extension = nombre.substring(nombre.lastIndexOf('.') + 1, nombre.length());
+            if (extension.equalsIgnoreCase("jpg") || extension.equalsIgnoreCase("png")) {
+                try {
+                    ImageIO.write(buffer, "png", fichero);
+                } catch (IOException e) {
+                }
+            }
+            else{
+                //mensaje de extension no válida
+            }
+        }
+    }//GEN-LAST:event_GuardarActionPerformed
+
+    private void fileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,12 +432,20 @@ public class VentanaPaint extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cancelar;
+    private javax.swing.JColorChooser Colores;
+    private javax.swing.JButton EligeColor;
+    private javax.swing.JMenuItem Guardar;
+    private javax.swing.JFileChooser GuardarArchivito;
+    private javax.swing.JDialog GuardarArchivos;
+    private javax.swing.JMenuBar Menu;
+    private javax.swing.JButton Ok;
+    private javax.swing.JDialog PaletaDeColores;
     private javax.swing.JPanel VentanaPintar;
     private codigo.BarraHerramientas barraHerramientas;
     private javax.swing.JMenu edit;
     private javax.swing.JMenu edit1;
     private javax.swing.JMenu file;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private codigo.PanelDeColores panelDeColores1;
     // End of variables declaration//GEN-END:variables
