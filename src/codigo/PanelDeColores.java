@@ -454,7 +454,7 @@ public class PanelDeColores extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    //PROGRAMADOS LOS JLABEL DE LOS COLORES PARA QUE PINTE DE ESE COLOR Y SE MUESTRE EL COLOR QUE SE HA ELEGIDO
     private void negroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_negroMousePressed
         colorSeleccionado = Color.black;
         SaberColor.setBackground(colorSeleccionado);
@@ -623,7 +623,7 @@ public class PanelDeColores extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel SaberColor;
+    public javax.swing.JLabel SaberColor;
     private javax.swing.JLabel amarillo;
     private javax.swing.JLabel amarilloClaro;
     private javax.swing.JLabel azul;

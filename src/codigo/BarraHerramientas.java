@@ -220,7 +220,7 @@ public class BarraHerramientas extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    //COLOCAMOS UN NUMERO A CADA FORMA
     private void circuloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_circuloMousePressed
         formaElegida = 1;
     }//GEN-LAST:event_circuloMousePressed

@@ -69,14 +69,14 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JDialog" name="GuardarArchivos">
+    <Container class="javax.swing.JDialog" name="GuardaryCargarArchivos">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="57" max="32767" attributes="0"/>
-                  <Component id="GuardarArchivito" min="-2" max="-2" attributes="0"/>
+                  <Component id="GuardaryCargarArchivito" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -85,14 +85,14 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="GuardarArchivito" min="-2" max="-2" attributes="0"/>
+                  <Component id="GuardaryCargarArchivito" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="41" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JFileChooser" name="GuardarArchivito">
+        <Component class="javax.swing.JFileChooser" name="GuardaryCargarArchivito">
         </Component>
       </SubComponents>
     </Container>
@@ -102,9 +102,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fileActionPerformed"/>
-          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="Guardar">
               <Properties>
@@ -114,16 +111,19 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GuardarActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Cargar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cargar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CargarActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="edit">
           <Properties>
             <Property name="text" type="java.lang.String" value="Edit"/>
-          </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="edit1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Help"/>
           </Properties>
         </Menu>
       </SubComponents>
@@ -156,7 +156,7 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panelDeColores1" min="-2" max="-2" attributes="0"/>
+                  <Component id="panelDeColores" min="-2" max="-2" attributes="0"/>
                   <Component id="VentanaPintar" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -174,7 +174,7 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="panelDeColores1" min="-2" pref="79" max="-2" attributes="0"/>
+              <Component id="panelDeColores" min="-2" pref="79" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -211,7 +211,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="codigo.PanelDeColores" name="panelDeColores1">
+    <Component class="codigo.PanelDeColores" name="panelDeColores">
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
 

@@ -6,15 +6,29 @@
 package codigo.formas;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Polygon;
 
 /**
  *
  * @author Sarita
  */
-public class Linea extends Forma{
-    
-    public Linea(int _posX, int _posY, int _lados, Color _color, boolean _relleno) {
-        super(_posX, _posY, 2, _color, _relleno);
+public class Linea extends Polygon {
+
+    public int x;
+    public int y;
+    public Color color;
+
+    public Linea(int _posX, int _posY, Color _color) {
+        x = _posX;
+        y = _posY;
+        color = _color;
     }
-    
+
+    public void dibujate(Graphics2D g2, int _posX, int _posY, Color _color) {
+        g2.setColor(_color);
+        g2.drawLine(_posX, _posY, x, y);
+
+    }
+
 }
