@@ -11,6 +11,7 @@ import codigo.formas.Estrella;
 import codigo.formas.Forma;
 import codigo.formas.Linea;
 import codigo.formas.Pentagono;
+import codigo.formas.Texto;
 import codigo.formas.Triangulo;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -34,6 +35,10 @@ public class VentanaPaint extends javax.swing.JFrame {
     Forma miForma = new Forma(-1, -1, 1, Color.white, false);
     Random aleatorio = new Random();
     Linea linea = null;
+    int grosor =  50;
+    int posX =0;
+    int posY =0;
+    Texto texto = null;
 
     /**
      * Creates new form VentanaPaint
@@ -87,6 +92,8 @@ public class VentanaPaint extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         barraHerramientas = new codigo.BarraHerramientas();
         EligeColor = new javax.swing.JButton();
+        Trazo = new javax.swing.JSlider();
+        TrazoNombre = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
         Guardar = new javax.swing.JMenuItem();
@@ -177,11 +184,11 @@ public class VentanaPaint extends javax.swing.JFrame {
         VentanaPintar.setLayout(VentanaPintarLayout);
         VentanaPintarLayout.setHorizontalGroup(
             VentanaPintarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 473, Short.MAX_VALUE)
+            .addGap(0, 507, Short.MAX_VALUE)
         );
         VentanaPintarLayout.setVerticalGroup(
             VentanaPintarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 396, Short.MAX_VALUE)
         );
 
         EligeColor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/paleta.jpg"))); // NOI18N
@@ -215,6 +222,17 @@ public class VentanaPaint extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        Trazo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                TrazoMouseReleased(evt);
+            }
+        });
+
+        TrazoNombre.setBackground(new java.awt.Color(255, 255, 255));
+        TrazoNombre.setFont(new java.awt.Font("Trebuchet MS", 1, 11)); // NOI18N
+        TrazoNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TrazoNombre.setText("TRAZO");
+
         file.setText("File");
 
         Guardar.setText("Guardar");
@@ -245,22 +263,35 @@ public class VentanaPaint extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelDeColores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VentanaPintar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Trazo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TrazoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(VentanaPintar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(panelDeColores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(TrazoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Trazo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(VentanaPintar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDeColores, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -273,22 +304,24 @@ public class VentanaPaint extends javax.swing.JFrame {
         switch (barraHerramientas.formaElegida) {
             case 0:
                 bufferGraphics2.setColor(panelDeColores.colorSeleccionado);
-                bufferGraphics2.fillOval(evt.getX(), evt.getY(), 4, 4);
+                bufferGraphics2.drawLine(evt.getX(), evt.getY(), posX, posY);
+                posX = evt.getX();
+                posY= evt.getY();
                 break;
             case 1:
                 miCirculo.dibujate(bufferGraphics, evt.getX());
                 break;
             case 5:
-                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY(),Trazo.getValue());
                 break;
             case 4:
-                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY(),Trazo.getValue());
                 break;
             case 3:
-                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY(),Trazo.getValue());
                 break;
             case 2:
-                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY(),Trazo.getValue());
                 break;
             case 10:
                 bufferGraphics2.setColor(Color.white);
@@ -301,13 +334,15 @@ public class VentanaPaint extends javax.swing.JFrame {
                 }
                 break;
             case 7:
-                linea.dibujate(bufferGraphics, evt.getX(), evt.getY(), panelDeColores.colorSeleccionado);
+                linea.dibujate(bufferGraphics, evt.getX(), evt.getY(), panelDeColores.colorSeleccionado,Trazo.getValue());
                 break;
             case 8:
                 bufferGraphics2.setColor(panelDeColores.colorSeleccionado);
                 bufferGraphics2.fillRect(evt.getX(), evt.getY(), 10, 10);
                 break;
-
+            case 9:
+                texto.escribe(bufferGraphics,evt.getX(), evt.getY(),"HOLA", panelDeColores.colorSeleccionado, 10);
+                break;
         }
         repaint(0, 0, 1, 1);
     }//GEN-LAST:event_VentanaPintarMouseDragged
@@ -315,6 +350,8 @@ public class VentanaPaint extends javax.swing.JFrame {
     private void VentanaPintarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentanaPintarMousePressed
         switch (barraHerramientas.formaElegida) {
             case 0:
+                posX = evt.getX();
+                posY= evt.getY();
                 break;
             case 1:
                 miCirculo = new Circulo(evt.getX(), evt.getY(), 1,
@@ -324,22 +361,22 @@ public class VentanaPaint extends javax.swing.JFrame {
             case 5:
                 miForma = new Pentagono(evt.getX(), evt.getY(), 5,
                         panelDeColores.colorSeleccionado, barraHerramientas.relleno);
-                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY(),Trazo.getValue());
                 break;
             case 4:
                 miForma = new Cuadrado(evt.getX(), evt.getY(), 4,
                         panelDeColores.colorSeleccionado, barraHerramientas.relleno);
-                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY(),Trazo.getValue());
                 break;
             case 3:
                 miForma = new Triangulo(evt.getX(), evt.getY(), 3,
                         panelDeColores.colorSeleccionado, barraHerramientas.relleno);
-                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY(),Trazo.getValue());
                 break;
             case 2:
                 miForma = new Estrella(evt.getX(), evt.getY(), 256,
                         panelDeColores.colorSeleccionado, barraHerramientas.relleno);
-                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
+                miForma.dibujate(bufferGraphics, evt.getX(), evt.getY(),Trazo.getValue());
                 break;
             case 10:
                 miForma = new Forma(-1, -1, 1, Color.white, false);
@@ -350,9 +387,13 @@ public class VentanaPaint extends javax.swing.JFrame {
             case 7:
                 linea = new Linea(evt.getX(), evt.getY(),
                         panelDeColores.colorSeleccionado);
-                linea.dibujate(bufferGraphics, evt.getX(), evt.getY(), panelDeColores.colorSeleccionado);
+                linea.dibujate(bufferGraphics, evt.getX(), evt.getY(), panelDeColores.colorSeleccionado, Trazo.getValue());
                 break;
             case 8:
+                break;
+            case 9:
+                texto = new Texto (evt.getX(), evt.getY(), "HOLA");
+                texto.escribe(bufferGraphics, evt.getX(), evt.getY(),"ESCRIBE AQUI",panelDeColores.colorSeleccionado,30);
                 break;
         }
     }//GEN-LAST:event_VentanaPintarMousePressed
@@ -362,9 +403,9 @@ public class VentanaPaint extends javax.swing.JFrame {
             miCirculo.dibujate(bufferGraphics2, evt.getX());
         } else if (barraHerramientas.formaElegida == 7) {
            
-            linea.dibujate(bufferGraphics2, evt.getX(), evt.getY(), panelDeColores.colorSeleccionado);
+            linea.dibujate(bufferGraphics2, evt.getX(), evt.getY(), panelDeColores.colorSeleccionado,Trazo.getValue());
         } else if (barraHerramientas.formaElegida != 0 || barraHerramientas.formaElegida != 10) {
-            miForma.dibujate(bufferGraphics2, evt.getX(), evt.getY());
+            miForma.dibujate(bufferGraphics2, evt.getX(), evt.getY(),Trazo.getValue());
         }
     }//GEN-LAST:event_VentanaPintarMouseReleased
 
@@ -432,6 +473,10 @@ public class VentanaPaint extends javax.swing.JFrame {
 
     }//GEN-LAST:event_CargarActionPerformed
 
+    private void TrazoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TrazoMouseReleased
+        Trazo.getValue();
+    }//GEN-LAST:event_TrazoMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -479,6 +524,8 @@ public class VentanaPaint extends javax.swing.JFrame {
     private javax.swing.JMenuBar Menu;
     private javax.swing.JButton Ok;
     private javax.swing.JDialog PaletaDeColores;
+    private javax.swing.JSlider Trazo;
+    private javax.swing.JLabel TrazoNombre;
     private javax.swing.JPanel VentanaPintar;
     private codigo.BarraHerramientas barraHerramientas;
     private javax.swing.JMenu edit;
