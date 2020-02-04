@@ -34,7 +34,7 @@ public class Texto{
         g2.setColor(color);
         g2.setFont(font);
         g2.drawString(texto, (float) posX, (float) posY);
-        g2.dispose();
+       
        
     }
 }

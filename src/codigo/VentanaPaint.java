@@ -35,7 +35,7 @@ public class VentanaPaint extends javax.swing.JFrame {
     Forma miForma = new Forma(-1, -1, 1, Color.white, false);
     Random aleatorio = new Random();
     Linea linea = null;
-    int grosor =  50;
+    int grosor = 1;
     int posX =0;
     int posY =0;
     Texto texto = null;
@@ -47,6 +47,7 @@ public class VentanaPaint extends javax.swing.JFrame {
         initComponents();
         inicializaBuffers();
         PaletaDeColores.setSize(750, 450);
+        Trazo.setValue(1);
     }
 
     private void inicializaBuffers() {
@@ -87,6 +88,9 @@ public class VentanaPaint extends javax.swing.JFrame {
         Ok = new javax.swing.JButton();
         GuardaryCargarArchivos = new javax.swing.JDialog();
         GuardaryCargarArchivito = new javax.swing.JFileChooser();
+        Texto = new javax.swing.JDialog();
+        escribeTexto = new java.awt.TextArea();
+        Aceptar = new java.awt.Button();
         VentanaPintar = new javax.swing.JPanel();
         panelDeColores = new codigo.PanelDeColores();
         jPanel1 = new javax.swing.JPanel();
@@ -160,6 +164,29 @@ public class VentanaPaint extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(GuardaryCargarArchivito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        Aceptar.setLabel("button1");
+
+        javax.swing.GroupLayout TextoLayout = new javax.swing.GroupLayout(Texto.getContentPane());
+        Texto.getContentPane().setLayout(TextoLayout);
+        TextoLayout.setHorizontalGroup(
+            TextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TextoLayout.createSequentialGroup()
+                .addComponent(escribeTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Aceptar, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        TextoLayout.setVerticalGroup(
+            TextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TextoLayout.createSequentialGroup()
+                .addComponent(escribeTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 235, Short.MAX_VALUE))
+            .addGroup(TextoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -309,7 +336,7 @@ public class VentanaPaint extends javax.swing.JFrame {
                 posY= evt.getY();
                 break;
             case 1:
-                miCirculo.dibujate(bufferGraphics, evt.getX());
+                miCirculo.dibujate(bufferGraphics, evt.getX(),Trazo.getValue());
                 break;
             case 5:
                 miForma.dibujate(bufferGraphics, evt.getX(), evt.getY(),Trazo.getValue());
@@ -343,6 +370,8 @@ public class VentanaPaint extends javax.swing.JFrame {
             case 9:
                 texto.escribe(bufferGraphics,evt.getX(), evt.getY(),"HOLA", panelDeColores.colorSeleccionado, 10);
                 break;
+            case 11:
+                break;
         }
         repaint(0, 0, 1, 1);
     }//GEN-LAST:event_VentanaPintarMouseDragged
@@ -356,7 +385,7 @@ public class VentanaPaint extends javax.swing.JFrame {
             case 1:
                 miCirculo = new Circulo(evt.getX(), evt.getY(), 1,
                         panelDeColores.colorSeleccionado, barraHerramientas.relleno);
-                miCirculo.dibujate(bufferGraphics, evt.getX());
+                miCirculo.dibujate(bufferGraphics, evt.getX(),Trazo.getValue());
                 break;
             case 5:
                 miForma = new Pentagono(evt.getX(), evt.getY(), 5,
@@ -393,14 +422,19 @@ public class VentanaPaint extends javax.swing.JFrame {
                 break;
             case 9:
                 texto = new Texto (evt.getX(), evt.getY(), "HOLA");
-                texto.escribe(bufferGraphics, evt.getX(), evt.getY(),"ESCRIBE AQUI",panelDeColores.colorSeleccionado,30);
+                texto.escribe(bufferGraphics, evt.getX(), evt.getY(),escribeTexto.getText(),panelDeColores.colorSeleccionado,30);
+                break;
+            case 11:
+                Color c = new Color (buffer.getRGB(evt.getX(), evt.getY()));
+                panelDeColores.colorSeleccionado = c;
+                panelDeColores.SaberColor.setBackground(c);
                 break;
         }
     }//GEN-LAST:event_VentanaPintarMousePressed
 
     private void VentanaPintarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentanaPintarMouseReleased
         if (barraHerramientas.formaElegida == 1) {
-            miCirculo.dibujate(bufferGraphics2, evt.getX());
+            miCirculo.dibujate(bufferGraphics2, evt.getX(),Trazo.getValue());
         } else if (barraHerramientas.formaElegida == 7) {
            
             linea.dibujate(bufferGraphics2, evt.getX(), evt.getY(), panelDeColores.colorSeleccionado,Trazo.getValue());
@@ -514,6 +548,7 @@ public class VentanaPaint extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Button Aceptar;
     private javax.swing.JButton Cancelar;
     private javax.swing.JMenuItem Cargar;
     private javax.swing.JColorChooser Colores;
@@ -524,11 +559,13 @@ public class VentanaPaint extends javax.swing.JFrame {
     private javax.swing.JMenuBar Menu;
     private javax.swing.JButton Ok;
     private javax.swing.JDialog PaletaDeColores;
+    private javax.swing.JDialog Texto;
     private javax.swing.JSlider Trazo;
     private javax.swing.JLabel TrazoNombre;
     private javax.swing.JPanel VentanaPintar;
     private codigo.BarraHerramientas barraHerramientas;
     private javax.swing.JMenu edit;
+    private java.awt.TextArea escribeTexto;
     private javax.swing.JMenu file;
     private javax.swing.JPanel jPanel1;
     private codigo.PanelDeColores panelDeColores;

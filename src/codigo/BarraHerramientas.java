@@ -63,6 +63,11 @@ public class BarraHerramientas extends javax.swing.JPanel {
         pipeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pipeta.jpg"))); // NOI18N
         pipeta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pipeta.setOpaque(true);
+        pipeta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pipetaMousePressed(evt);
+            }
+        });
 
         linea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/linea.jpg"))); // NOI18N
         linea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -273,6 +278,10 @@ public class BarraHerramientas extends javax.swing.JPanel {
     private void textoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoMousePressed
        formaElegida =9;
     }//GEN-LAST:event_textoMousePressed
+
+    private void pipetaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pipetaMousePressed
+       formaElegida = 11;
+    }//GEN-LAST:event_pipetaMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
